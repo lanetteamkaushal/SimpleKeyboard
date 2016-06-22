@@ -19,13 +19,13 @@ import android.view.inputmethod.InputConnection;
  * TODO: Customize class - update intent actions and extra parameters.
  */
 public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
-    private KeyboardView kv;
+    private CustomKeyboardView kv;
     private Keyboard keyboard;
     private boolean caps = false;
 
     @Override
     public View onCreateInputView() {
-        kv = (KeyboardView) getLayoutInflater().inflate(R.layout.keyboard, null);
+        kv = (CustomKeyboardView) getLayoutInflater().inflate(R.layout.keyboard, null);
         kv.setBackgroundColor(Color.RED);
         keyboard = new Keyboard(this, R.xml.qwerty);
         kv.setKeyboard(keyboard);
